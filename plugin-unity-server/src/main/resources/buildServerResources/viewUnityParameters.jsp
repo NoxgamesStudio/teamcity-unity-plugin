@@ -47,6 +47,12 @@
     </div>
 </c:if>
 
+<c:if test="${propertiesBean.properties[params.noQuit]}">
+    <div class="parameter">
+        Do not quit after method call, quit with EditorApplication.Exit: <strong>ON</strong>
+    </div>
+</c:if>
+
 <c:if test="${propertiesBean.properties[params.silentCrashes]}">
     <div class="parameter">
         Do not display the error dialog when a standalone player crashes: <strong>ON</strong>
