@@ -145,3 +145,9 @@ Send a Pull Request to contribute or contact us via [YouTrack][youtrack] to repo
 [youtrack]: https://youtrack.jetbrains.com/newIssue?project=TW&c=Team%20Build%20Tools%20Integrations&c=tag%20tc-unity
 [cache-server]: https://docs.unity3d.com/2019.2/Documentation/Manual/CacheServer.html
 [unity-accelerator]: https://docs.unity3d.com/Manual/UnityAccelerator.html
+
+#HOW TO BUILD PLUGIN
+
+Open project in IntellijIdea
+Open Gradle tab
+Expand teamcity-unity-plugin, Tasks, build and doubleclick assemble
