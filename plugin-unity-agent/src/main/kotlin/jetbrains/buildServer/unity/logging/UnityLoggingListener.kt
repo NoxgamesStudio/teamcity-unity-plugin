@@ -160,7 +160,12 @@ class UnityLoggingListener(
                 UnityStackTraceBlock(),
                 DomainReloadProfilingBlock(),
                 RefreshInfoBlock(),
-                UnityStackTraceFromCoroutineBlock()
+                UnityStackTraceFromCoroutineBlock(),
+                ManifestCurrentFilesBlock(),
+                ManifestParsingBlock(),
+                MonoDependenciesBlock(),
+                CompilingShaderBlock(),
+                UnityAnotherStackTraceFromCoroutineBlock()
         )
     }
 }

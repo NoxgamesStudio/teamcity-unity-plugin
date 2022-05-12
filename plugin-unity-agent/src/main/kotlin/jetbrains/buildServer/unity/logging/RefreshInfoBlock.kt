@@ -2,7 +2,7 @@ package jetbrains.buildServer.unity.logging
 
 class RefreshInfoBlock : LogBlock {
 
-    override val name = "RefreshInfo"
+    override val name = "RefreshInfo - more:"
 
     override val logFirstLine = LogType.Inside
 
@@ -15,7 +15,7 @@ class RefreshInfoBlock : LogBlock {
     override fun getText(text: String) = text
 
     companion object {
-        private val blockStart = Regex("RefreshInfo: .*")
+        private val blockStart = Regex("InvokeBeforeRefreshCallbacks: .*")
         private val blockEnd = Regex("Untracked:.*")
     }
 }

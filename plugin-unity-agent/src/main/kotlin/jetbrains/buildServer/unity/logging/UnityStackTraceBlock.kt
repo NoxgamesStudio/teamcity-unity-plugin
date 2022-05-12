@@ -24,7 +24,7 @@ class UnityStackTraceBlock : LogBlock {
 
     companion object {
         private val blockStart = Regex("UnityEngine.StackTraceUtility:ExtractStackTrace.*$")
-        private val blockEnd = Regex("^\\(Filename:.*\$")
+        private val blockEnd = Regex("(^\\(Filename:.*)|(\\[.* line \\d+\\])")
         private val filterOut = Regex("^(UnityEngine.Debug|UnityEngine.Logger|UnityEngine.StackTraceUtility).*$")
     }
 }
