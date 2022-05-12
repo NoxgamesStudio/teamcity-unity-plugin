@@ -15,7 +15,7 @@ class UnityAnotherStackTraceFromCoroutineBlock : LogBlock {
     override fun getText(text: String) = text
 
     companion object {
-        private val blockStart = Regex(".*#0 GetStacktrace(int).*")
+        private val blockStart = Regex(".*#0 GetStacktrace\\(int\\).*")
         private val blockEnd = Regex(".*#\\d+.*")
     }
 }
