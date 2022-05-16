@@ -49,9 +49,9 @@ class LineStatusProvider {
      * @return status.
      */
     fun getLineStatus(text: String): LineStatus {
-        return patterns.firstOrNull {
-            it.first.containsMatchIn(text)
-        }?.second ?: LineStatus.Normal
+        if(text.startsWith("##teamcity"))
+            return LineStatus.Normal
+        return patterns.firstOrNull { it.first.containsMatchIn(text) }?.second ?: LineStatus.Normal
     }
 
     companion object {
