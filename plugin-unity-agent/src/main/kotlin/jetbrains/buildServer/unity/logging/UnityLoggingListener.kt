@@ -72,11 +72,13 @@ class UnityLoggingListener(
                         logBlockOpened(name)
                         blocks.push(this)
                     }
+
                     LogType.Inside -> {
                         logBlockOpened(name)
                         blocks.push(this)
                         logMessage(text)
                     }
+
                     else -> {
                         logBlockOpened(name)
                         blocks.push(this)
@@ -98,11 +100,13 @@ class UnityLoggingListener(
                         blocks.pop()
                         // logMessage(text)
                     }
+
                     LogType.Inside -> {
                         logMessage(text)
                         logBlockClosed(name)
                         blocks.pop()
                     }
+
                     else -> {
                         logBlockClosed(name)
                         blocks.pop()
@@ -141,31 +145,34 @@ class UnityLoggingListener(
     companion object {
         private val defaultBlock = DefaultBlock()
         private val loggers = listOf(
-                BuildReportBlock(),
-                CommandLineBlock(),
-                CompileBlock(),
-                ExtensionsBlock(),
-                LightmapBlock(),
-                MonoBlock(),
-                PackageManagerBlock(),
-                PerformanceBlock(),
-                PlayerStatisticsBlock(),
-                PrepareBlock(),
-                //RefreshBlock(),
-                ScriptCompilationBlock(),
-                UpdateBlock(),
-                AssetDatabaseInitialScriptRefreshBlock(),
-                AssetDatabaseRefreshBlock(),
-                MonoManagerReloadAssemblyBlock(),
-                UnityStackTraceBlock(),
-                DomainReloadProfilingBlock(),
-                RefreshInfoBlock(),
-                UnityStackTraceFromCoroutineBlock(),
-                ManifestCurrentFilesBlock(),
-                ManifestParsingBlock(),
-                MonoDependenciesBlock(),
-                CompilingShaderBlock(),
-                UnityAnotherStackTraceFromCoroutineBlock()
+            BuildReportBlock(),
+            CommandLineBlock(),
+            CompileBlock(),
+            ExtensionsBlock(),
+            LightmapBlock(),
+            MonoBlock(),
+            PackageManagerBlock(),
+            PerformanceBlock(),
+            PlayerStatisticsBlock(),
+            PrepareBlock(),
+            //RefreshBlock(),
+            ScriptCompilationBlock(),
+            UpdateBlock(),
+            AssetDatabaseInitialScriptRefreshBlock(),
+            AssetDatabaseRefreshBlock(),
+            MonoManagerReloadAssemblyBlock(),
+            UnityStackTraceBlock(),
+            DomainReloadProfilingBlock(),
+            RefreshInfoBlock(),
+            UnityStackTraceFromCoroutineBlock(),
+            ManifestCurrentFilesBlock(),
+            ManifestParsingBlock(),
+            MonoDependenciesBlock(),
+            CompilingShaderBlock(),
+            UnityAnotherStackTraceFromCoroutineBlock(),
+            IL2CppProgressBlock(),
+            StartImportingBlock(),
+            MemoryStatisticsBlock()
         )
     }
 }
