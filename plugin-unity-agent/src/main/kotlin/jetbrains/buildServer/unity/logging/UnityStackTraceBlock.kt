@@ -10,7 +10,7 @@ class UnityStackTraceBlock : LogBlock {
 
     override fun isBlockStart(text: String) = blockStart.containsMatchIn(text)
 
-    override fun isBlockEnd(text: String) = blockEnd.containsMatchIn(text) || blockEnd2.containsMatchIn(text)
+    override fun isBlockEnd(text: String) = blockEnd.containsMatchIn(text) || blockEnd2.containsMatchIn(text) || blockEnd3.containsMatchIn(text)
 
     override fun getText(text: String) =
         if (filterOut.containsMatchIn(text)) {
@@ -26,6 +26,7 @@ class UnityStackTraceBlock : LogBlock {
         private val blockStart = Regex("UnityEngine.StackTraceUtility:ExtractStackTrace.*$")
         private val blockEnd = Regex("(^\\(Filename:.*)|(\\[.* line \\d+\\])")
         private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes.*")
+        private val blockEnd3 = Regex("UnityEditor.EditorApplication:Internal_CallUpdateFunctions.*")
         private val filterOut = Regex("^(UnityEngine.Debug|UnityEngine.Logger|UnityEngine.StackTraceUtility).*$")
     }
 }
