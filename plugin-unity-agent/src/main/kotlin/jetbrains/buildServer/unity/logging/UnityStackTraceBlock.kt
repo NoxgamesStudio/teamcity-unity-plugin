@@ -10,7 +10,12 @@ class UnityStackTraceBlock : LogBlock {
 
     override fun isBlockStart(text: String) = blockStart.containsMatchIn(text)
 
-    override fun isBlockEnd(text: String) = blockEnd.containsMatchIn(text) || blockEnd2.containsMatchIn(text) || blockEnd3.containsMatchIn(text) || blockEnd4.containsMatchIn(text)
+    override fun isBlockEnd(text: String) = blockEnd.containsMatchIn(text) ||
+            blockEnd2.containsMatchIn(text) ||
+            blockEnd3.containsMatchIn(text) ||
+            blockEnd4.containsMatchIn(text) ||
+            blockEnd5.containsMatchIn(text) ||
+            blockEnd6.containsMatchIn(text)
 
     override fun getText(text: String) =
         if (filterOut.containsMatchIn(text)) {
@@ -27,7 +32,10 @@ class UnityStackTraceBlock : LogBlock {
         private val blockEnd = Regex("(^\\(Filename:.*)|(\\[.* line \\d+\\])")
         private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes.*")
         private val blockEnd3 = Regex("UnityEditor.EditorApplication:Internal_CallUpdateFunctions.*")
-        private val blockEnd4 = Regex("UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:CompileScripts.*")
+        private val blockEnd4 =
+            Regex("UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:CompileScripts.*")
+        private val blockEnd5 = Regex("UnityEditorInternal.APIUpdating.APIUpdaterManager:ProcessImportedAssemblies.*")
+        private val blockEnd6 = Regex("UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules.*")
         private val filterOut = Regex("^(UnityEngine.Debug|UnityEngine.Logger|UnityEngine.StackTraceUtility).*$")
     }
 }
