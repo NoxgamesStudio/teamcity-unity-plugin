@@ -16,7 +16,7 @@ class IL2CppProgressBlock : LogBlock {
     override fun getText(text: String) = text
 
     companion object {
-        private val blockItem = Regex("\\[\\s*\\d+\\/\\d+\\s*\\d+s\\]")
+        private val blockItem = Regex("\\[\\s*(\\d+/\\d+)*\\s*\\d+s\\]")
         private const val blockItem2 = "- Starting ILPostProcessor"
         private const val blockItem3 = "- Finished ILPostProcessor"
     }

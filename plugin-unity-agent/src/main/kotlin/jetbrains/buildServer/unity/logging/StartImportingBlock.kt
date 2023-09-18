@@ -9,12 +9,13 @@ class StartImportingBlock : LogBlock {
 
     override fun isBlockStart(text: String) = blockItem.containsMatchIn(text)
 
-    override fun isBlockEnd(text: String) = !blockItem.containsMatchIn(text)
+    override fun isBlockEnd(text: String) = !blockItem.containsMatchIn(text) && !blockItem2.containsMatchIn(text)
 
     override fun getText(text: String) = text
 
     companion object {
         private val blockItem = Regex("^\\s*Start importing .*")
+        private val blockItem2 = Regex("^\\s* -> \\(artifact id:.*")
     }
 }
 
