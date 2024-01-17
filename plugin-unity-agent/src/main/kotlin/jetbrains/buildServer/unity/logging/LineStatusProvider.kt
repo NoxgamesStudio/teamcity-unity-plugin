@@ -24,6 +24,7 @@ class LineStatusProvider {
                 Regex("Couldn't set project path to:.+") to LineStatus.Error,
                 Regex("Failed to activate/update license") to LineStatus.Error,
                 Regex("Error building player .+") to LineStatus.Error,
+                Regex("FAILURE: Build failed with an exception.*") to LineStatus.Error,
             ),
         )
     }
