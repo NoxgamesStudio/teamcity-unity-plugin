@@ -9,8 +9,7 @@ class UnityStackTraceBlock : LogBlock {
     override val logLastLine = LogType.Inside
 
     override fun isBlockStart(text: String) = blockStart.containsMatchIn(text) ||
-            blockStart2.containsMatchIn(text) ||
-            blockStart3.containsMatchIn(text)
+            blockStart2.containsMatchIn(text)
 
     override fun isBlockEnd(text: String) = blockEnd.containsMatchIn(text) ||
             // blockEnd2.containsMatchIn(text) ||
@@ -45,11 +44,11 @@ class UnityStackTraceBlock : LogBlock {
     companion object {
         private val blockStart = Regex("UnityEngine.StackTraceUtility:ExtractStackTrace.*$")
         private val blockStart2 = Regex("UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck.*$")
-        private val blockStart3 = Regex("Google.Logger:Log.*$")
+        // private val blockStart3 = Regex("Google.Logger:Log.*$") moved to GoogleStackTraceBlock.kt
 
         private val blockEnd = Regex("(^\\s*\\(Filename:.*)|(\\s*\\[.* line \\d+\\])")
 
-        // private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes.*")
+        // private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes.*") moved to GoogleStackTraceBlock.kt
         // private val blockEnd3 = Regex("UnityEditor.EditorApplication:Internal_CallUpdateFunctions.*")
         private val blockEnd4 =
                 Regex("UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:(TickCompilationPipeline|CompileScripts).*")
