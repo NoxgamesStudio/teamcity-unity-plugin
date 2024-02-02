@@ -172,7 +172,8 @@ class UnityLoggingListener(
             UnityAnotherStackTraceFromCoroutineBlock(),
             IL2CppProgressBlock(),
             StartImportingBlock(),
-            MemoryStatisticsBlock()
+            MemoryStatisticsBlock(),
+            GoogleStackTraceBlock()
         )
     }
 }

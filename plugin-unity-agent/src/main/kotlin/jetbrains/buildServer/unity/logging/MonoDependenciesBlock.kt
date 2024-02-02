@@ -6,7 +6,7 @@ class MonoDependenciesBlock : LogBlock {
 
     override val logFirstLine = LogType.Inside
 
-    override val logLastLine = LogType.None
+    override val logLastLine = LogType.Inside
 
     override fun isBlockStart(text: String) = blockStart.containsMatchIn(text)
 

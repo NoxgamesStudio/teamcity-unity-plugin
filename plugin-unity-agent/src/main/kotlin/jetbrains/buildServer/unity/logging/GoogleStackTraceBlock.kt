@@ -2,7 +2,7 @@ package jetbrains.buildServer.unity.logging
 
 class GoogleStackTraceBlock : LogBlock {
 
-    override var name = "..."
+    override var name = "... Google Log"
 
     override val logFirstLine = LogType.Inside
 
@@ -27,8 +27,6 @@ class GoogleStackTraceBlock : LogBlock {
         if (filterOut.containsMatchIn(text)) {
             ""
         } else {
-            // if (blockEnd.containsMatchIn(text))
-            //     name = "... $text"
             if (isBlockEnd(text))
                 text + "\n"
             else
@@ -36,10 +34,10 @@ class GoogleStackTraceBlock : LogBlock {
         }
 
     companion object {
-        private val blockStart = Regex("Google.Logger:Log.*$")
+        private val blockStart = Regex("Google.Logger:Log")
 
         private val blockEnd = Regex("(^\\s*\\(Filename:.*)|(\\s*\\[.* line \\d+\\])")
-        private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes.*")
+        private val blockEnd2 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes")
 
         private val filterOut = Regex("^(UnityEngine.Debug|UnityEngine.Logger|UnityEngine.StackTraceUtility).*$")
     }
