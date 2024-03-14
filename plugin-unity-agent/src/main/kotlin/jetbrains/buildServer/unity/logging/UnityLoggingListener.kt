@@ -130,6 +130,13 @@ class UnityLoggingListener(
                     logger.message(BuildProblem(message).asString())
                 }
             }
+            LineStatus.NonFatalFailure -> {
+                if (suppressBuildProblems) {
+                    logger.message(Message(message, Status.WARNING.text, null).asString())
+                } else {
+                    logger.message(Message(message, Status.FAILURE.text, null).asString())
+                }
+            }
             else -> logger.message(message)
         }
     }
