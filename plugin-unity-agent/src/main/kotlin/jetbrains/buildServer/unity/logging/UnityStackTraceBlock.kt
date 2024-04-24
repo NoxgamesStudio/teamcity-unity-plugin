@@ -17,7 +17,9 @@ class UnityStackTraceBlock : LogBlock {
             blockEnd4.containsMatchIn(text) ||
             blockEnd5.containsMatchIn(text) ||
             blockEnd6.containsMatchIn(text) ||
-            blockEnd7.containsMatchIn(text)
+            blockEnd7.containsMatchIn(text) ||
+            blockEnd8.containsMatchIn(text) ||
+            blockEnd9.containsMatchIn(text)
 
     /*
     override fun getText(text: String) =
@@ -56,6 +58,8 @@ class UnityStackTraceBlock : LogBlock {
         private val blockEnd5 = Regex("UnityEditorInternal.APIUpdating.APIUpdaterManager:ProcessImportedAssemblies.*")
         private val blockEnd6 = Regex("UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules.*")
         private val blockEnd7 = Regex("UnityEditor.EditorApplication:Internal_CallDelayFunctions.*")
+        private val blockEnd8 = Regex("UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes.*")
+        private val blockEnd9 = Regex("UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets.*")
 
         private val filterOut = Regex("^(UnityEngine.Debug|UnityEngine.Logger|UnityEngine.StackTraceUtility).*$")
     }
