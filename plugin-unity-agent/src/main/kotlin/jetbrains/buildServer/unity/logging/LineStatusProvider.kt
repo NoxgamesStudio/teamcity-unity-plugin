@@ -27,6 +27,8 @@ class LineStatusProvider {
                 Regex("FAILURE: Build failed with an exception.*") to LineStatus.Error,
                 Regex("\\*\\* ARCHIVE FAILED \\*\\*.*") to LineStatus.Error,
                 Regex("Undefined symbols for architecture.*") to LineStatus.Error,
+                Regex("Addressable content build failure.*") to LineStatus.Error,
+                Regex("Failed to build Addressables content.*") to LineStatus.Error,
             ),
         )
     }
