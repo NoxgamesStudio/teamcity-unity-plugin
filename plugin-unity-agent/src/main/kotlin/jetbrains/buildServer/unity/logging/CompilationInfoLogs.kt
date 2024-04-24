@@ -20,7 +20,8 @@ class CompilationInfoLogs : LogBlock {
                     text.contains(blockItem8) ||
                     text.contains(blockItem9) ||
                     text.contains(blockItem10) ||
-                    text.contains(blockItem11))
+                    text.contains(blockItem11) ||
+                    text.contains(blockItem12))
 
     override fun getText(text: String) = text
 
@@ -36,5 +37,6 @@ class CompilationInfoLogs : LogBlock {
         private const val blockItem9 = "      Processing assembly "
         private const val blockItem10 = "      running "
         private const val blockItem11 = "- EILPP : "
+        private const val blockItem12 = "      ALC ILPP "
     }
 }
