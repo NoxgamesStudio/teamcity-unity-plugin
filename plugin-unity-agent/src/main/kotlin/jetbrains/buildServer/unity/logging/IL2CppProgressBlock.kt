@@ -18,7 +18,8 @@ class IL2CppProgressBlock : LogBlock {
                     text.contains(blockItem5) ||
                     text.contains(blockItem6) ||
                     text.contains(blockItem7) ||
-                    text.contains(blockItem8))
+                    text.contains(blockItem8) ||
+                    text.contains(blockItem9))
 
     override fun getText(text: String) = text
 
@@ -28,8 +29,9 @@ class IL2CppProgressBlock : LogBlock {
         private const val blockItem3 = "- Finished ILPostProcessor"
         private const val blockItem4 = "Processing assembly Library/Bee/artifacts"
         private const val blockItem5 = "processors: Unity.Entities.CodeGen.EntitiesILPostProcessors"
-        private const val blockItem6 = "running Unity.Entities.CodeGen.EntitiesILPostProcessors"
-        private const val blockItem7 = "running Unity.Jobs.CodeGen.JobsILPostProcessor"
-        private const val blockItem8 = "running zzzUnity.Burst.CodeGen.BurstILPostProcessor"
+        private const val blockItem6 = "processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor"
+        private const val blockItem7 = "running Unity.Entities.CodeGen.EntitiesILPostProcessors"
+        private const val blockItem8 = "running Unity.Jobs.CodeGen.JobsILPostProcessor"
+        private const val blockItem9 = "running zzzUnity.Burst.CodeGen.BurstILPostProcessor"
     }
 }
