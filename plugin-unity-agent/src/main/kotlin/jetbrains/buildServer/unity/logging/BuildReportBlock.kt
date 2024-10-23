@@ -4,7 +4,7 @@ class BuildReportBlock : LogBlock {
 
     override val name = "Build Report"
 
-    override val logFirstLine = LogType.None
+    override val logFirstLine = LogType.Inside
 
     override val logLastLine = LogType.None
 
@@ -15,7 +15,9 @@ class BuildReportBlock : LogBlock {
     override fun getText(text: String) = text
 
     companion object {
-        private val blockName = Regex("^\\s*Build Report") // "Build Report"
-        private val blockEnd = Regex("-{79}")
+        //private val blockName = Regex("^\\s*Build Report") // "Build Report"
+        private val blockName = Regex("Uncompressed usage by category \\(Percentages based on user generated assets only\\):")
+        //private val blockEnd = Regex("-{79}")
+        private val blockEnd = Regex("-{10}.*")
     }
 }
