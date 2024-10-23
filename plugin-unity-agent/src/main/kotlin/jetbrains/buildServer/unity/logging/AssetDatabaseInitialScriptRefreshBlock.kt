@@ -15,7 +15,7 @@ class AssetDatabaseInitialScriptRefreshBlock : LogBlock {
     override fun getText(text: String) = text
 
     companion object {
-        private val blockStart = Regex("Application\\.AssetDatabase Initial Script Refresh Start.*")
-        private val blockEnd = Regex("Application\\.AssetDatabase Initial Script Refresh End.*")
+        private val blockStart = Regex("Application\\.AssetDatabase Initial (Script )*Refresh Start.*")
+        private val blockEnd = Regex("Application\\.AssetDatabase Initial (Script )*Refresh End.*")
     }
 }
